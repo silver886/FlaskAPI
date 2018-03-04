@@ -27,7 +27,7 @@ app.add_url_rule(
 
 
 @app.errorhandler(400)
-def not_found(error):
+def bad_request(error):
     return jsonify({
         'error': 'Bad Request',
     }), 400
@@ -55,7 +55,7 @@ def not_found(error):
 
 
 @app.errorhandler(405)
-def not_found(error):
+def method_not_allowed(error):
     return jsonify({
         'error': 'Method Not Allowed',
     }), 405
