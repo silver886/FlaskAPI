@@ -49,7 +49,7 @@ class DataAPI(MethodView):
         if request.is_json:
             data = request.json
         else:
-            data = request.form
+            data = request.form.to_dict()
         if data is None:
             abort(400)
         if 'title' in data and type(data['title']) is not str:
